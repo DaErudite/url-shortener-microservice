@@ -4,9 +4,9 @@ const cors = require('cors');
 const mongoose= require('mongoose');
 const Url=require('./urlModel');
 const shortid=require('shortid');
-//const validUrl=require('valid-url');
+
 const dns=require('dns')
-//const {nanoid} = require("nanoid")
+
 const bodyParser=require('body-parser')
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 
 
-// const dbURI= `mongodb+srv://Israel:olaosebikan@nodejs.qhuw4.mongodb.net/nodeJS?retryWrites=true&w=majority`;
+
 const mySecret = process.env['dbURI']
 mongoose.connect(mySecret,{ useNewUrlParser: true, useUnifiedTopology: true })
 .then((result)=> console.log('mongoose connect success'))
